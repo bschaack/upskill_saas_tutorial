@@ -34,7 +34,7 @@
     <div class="containter">
       <%# adds notice of success or failure on form submit %>
       <% flash.each do |type, msg| %>
-        <%= content_tag :div, msg, class: "alert alert-#{type}" %>
+        <%= content_tag :div, msg, class: "alert alert-#{type} text-center" %>
       <% end %>
     </div>
     <%= yield %>
