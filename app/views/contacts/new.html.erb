@@ -4,7 +4,7 @@
   
     <div class="col-md-4 col-md-offset-4">
       <%# adds notice of success or failure on form submit %>
-      <%= flash[:notice] %>
+      <%= flash[:error] %>
       <div class="well">
         <%# links @contact to form %>
         <%= form_for @contact do |f| %>
