@@ -38,5 +38,5 @@ class ContactsController < ApplicationController
     # and whitelist the form fields
     def contact_params
         params.require(:contact).permit(:name, :email, :comments)
-      end
+    end
 end
