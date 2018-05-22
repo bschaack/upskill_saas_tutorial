@@ -41,10 +41,10 @@
         </div><%# /.navbar-collapse -%>
       </div>
     </nav>
-    <div class="containter">
+    <div class="container flash-container">
       <%# adds notice of success or failure on form submit %>
       <% flash.each do |type, msg| %>
-        <%= content_tag :div, msg, class: "alert alert-#{type} text-center" %>
+        <%= content_tag :div, msg, class: "alert alert-#{type}" %>
       <% end %>
     </div>
     <%= yield %>
