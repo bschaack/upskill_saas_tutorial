@@ -1,4 +1,9 @@
 class ProfilesController < ApplicationController
+  # Ensures user is logged in before viewing profiles
+  before_action :authenticate_user!
+  # Ensures current user can only create/edit their own profile
+  before_action :only_current_user
+  
   
   # GET to /users/:user_id/profile/new
   def new
@@ -45,5 +50,10 @@ class ProfilesController < ApplicationController
   private
     def profile_params
       params.require(:profile).permit(:first_name, :last_name, :avatar, :job_title, :phone_number, :contact_email, :description)
+    end
+    
+    def only_current_user
+      @user = User.find( params[:user_id] )
+      redirect_to(root_url) unless @user == current_user
     end
 end
